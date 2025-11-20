@@ -9,6 +9,7 @@ struct WordScramble: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showError = false
+    @State private var isOn = false
     
     @State private var score: Int = 0
     
@@ -28,6 +29,8 @@ struct WordScramble: View {
                         }
                     }
                 }
+                
+                Toggle("Animate", isOn: $isOn.animation())
             }
             .navigationTitle(rootWord)
             .navigationSubtitle("Your Score: \(score)")
